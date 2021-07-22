@@ -6,12 +6,9 @@ not such a concatenation, or return a string that is the concatenation with
 spaces between each constituent "word."
 """
 
-
 import functools
 import re
 from typing import Any, Generator, Iterable, Optional, Set, Union
-
-
 """
 Solution Using Regular Expressions
 ----------------------------------
@@ -27,6 +24,8 @@ again, each time extracting one match (the last one).
 
 This is inefficient, but short.
 """
+
+
 def solution_regex_inefficient(text: str, words: Set[str]) -> Optional[str]:
     if text == '':
         return ''
@@ -52,6 +51,8 @@ Solution Using Recursion
 The recursive solution lends itself well to lisp-style singly linked lists, and
 prefix tries.  This solution first defines and then uses those data structures.
 """
+
+
 class ChainNull:
     """A ChainNull is an empty singly linked list."""
     pass
@@ -76,7 +77,7 @@ class ChainLink:
         while chain is not ChainLink.EMPTY:
             yield chain.value
             chain = chain.suffix
-    
+
 
 def prepend(value, chain: Chain) -> ChainLink:
     return ChainLink(value, chain)
