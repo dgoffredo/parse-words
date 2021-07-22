@@ -73,7 +73,7 @@ class ChainLink:
 
     def __iter__(self):
         chain = self
-        while chain != ChainLink.EMPTY:
+        while chain is not ChainLink.EMPTY:
             yield chain.value
             chain = chain.suffix
     
