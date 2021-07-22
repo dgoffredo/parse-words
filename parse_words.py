@@ -137,13 +137,13 @@ def solution_recursive(text: str, words: Set[str]) -> Optional[str]:
 
     chain = recur(0)
     if chain is None:
-        return Non
+        return None
     return ' '.join(chain)
 
 
 if __name__ == '__main__':
     text = 'ininisbarfish'
-    words = {'foo', 'bar', 'fish', 'h', 'is', 'ini', 'in'}
+    words = {'foo', 'bar', 'sbar', 'fish', 'h', 'ini', 'in', 'is', 's'}
 
     print('using regex:', solution_regex_inefficient(text, words))
     print('using recursion:', solution_recursive(text, words))
